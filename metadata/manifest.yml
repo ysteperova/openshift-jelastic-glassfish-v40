@@ -1,17 +1,17 @@
-Name: tomcat8
-Cartridge-Short-Name: TOMCAT8
-Display-Name: TOMCAT8
-Description: "Jelastic Tomcat8"
-Version: '8.0.9'
-License: 'Apache licence'
+Name: glassfish4
+Cartridge-Short-Name: GLASSFISH4
+Display-Name: GLASSFISH4
+Description: "Jelastic Glassfish4"
+Version: '4.0'
+License: 'Common Development and Distribution License & GNU General Public License'
 License-Url: 
-Vendor: Eclipse
-Cartridge-Version: 8.0.9
+Vendor:Oracle   
+Cartridge-Version: 1.0.0
 Cartridge-Vendor: Jelastic
 Categories:
   - service
   - embedded
-Source-Url: https://github.com/ihorman/openshift-jelastic-tomcat8-v809.git
+Source-Url: https://github.com/ihorman/openshift-jelastic-glassfish-v40.git
 Website: http://jelastic.com/
 Help-Topics:
   "Developer Center": https://jelastic.com
