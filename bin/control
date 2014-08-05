@@ -1,5 +1,5 @@
 #!/bin/sh
-
+exit 0
 GLASSFISH_HOME=${GLASSFISH_HOME:-"/opt/repo/versions/${version}/"}
 
 case "$1" in
