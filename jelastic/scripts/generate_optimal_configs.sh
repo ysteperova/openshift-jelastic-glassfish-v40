@@ -12,7 +12,7 @@ JETTY_START_SCRIPT="${OPENSHIFT_JETTY9_DIR}.openshift/action_hooks/start";
 memory_total=`free -m | grep Mem | awk '{print $2}'`;
 [ -z "$XMX" ] && { let XMX=memory_total-35; }
 
-$SED -i  "s/-Xms[0-9]*m/-Xms${XMS}m/g"  $JETTY_START_SCRIPT;
-$SED -i  "s/-Xmx[0-9]*m/-Xmx${XMX}m/g"  $JETTY_START_SCRIPT;
+#$SED -i  "s/-Xms[0-9]*m/-Xms${XMS}m/g"  $JETTY_START_SCRIPT;
+#$SED -i  "s/-Xmx[0-9]*m/-Xmx${XMX}m/g"  $JETTY_START_SCRIPT;
 
 
