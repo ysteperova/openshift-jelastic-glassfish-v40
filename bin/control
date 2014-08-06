@@ -11,6 +11,12 @@ stop)
 restart)
     $GLASSFISH_HOME/bin/asadmin restart-domain >/dev/null
     ;;
+build)
+    echo 
+    ;;
+deploy)
+    echo
+    ;;
 *)
     echo "usage: $0 (start|stop|restart|help)"
 esac
