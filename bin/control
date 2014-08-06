@@ -1,6 +1,5 @@
 #!/bin/sh
-exit 0
-GLASSFISH_HOME=${GLASSFISH_HOME:-"/opt/repo/versions/${version}/"}
+GLASSFISH_HOME=${GLASSFISH_HOME:-"/opt/repo/versions/4.0/"}
 
 case "$1" in
 start)
