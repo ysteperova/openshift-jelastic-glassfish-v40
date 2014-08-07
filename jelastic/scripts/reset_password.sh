@@ -23,11 +23,12 @@ function _setPassword() {
         echo $J_OPENSHIFT_APP_ADM_PASSWORD > $PASS_FILE;
         echo $EMPTY_PASS | sed 's/userproto/admin/g' > $admin_key_file;
         echo $EMPTY_PASS | sed 's/userproto/jelastic/g' >> $admin_key_file;
-        
 
+        service cartridge restart;
         echo -e "AS_ADMIN_PASSWORD=\nAS_ADMIN_NEWPASSWORD=$J_OPENSHIFT_APP_ADM_PASSWORD" >> "/tmp/$$";
         $AS_ADMIN -u admin -W "/tmp/$$" change-admin-password > /dev/null 2>&1;
+        #$AS_ADMIN -u admin -W "/tmp/$$"        create-file-user jelastic 
         $AS_ADMIN -u jelastic -W "/tmp/$$" change-admin-password > /dev/null 2>&1;
-        $AS_ADMIN -u admin -W "/tmp/$$" enable-secure-admin > /dev/null 2>&1;
+        #$AS_ADMIN -u admin -W "/tmp/$$" enable-secure-admin > /dev/null 2>&1;
         rm "/tmp/$$" 2>&1;
 }
