@@ -16,7 +16,7 @@ function _runAsadminCmd(){
                 cat $PASS_FILE >> $temp_file;
                 $AS_ADMIN -u $ADMIN_USER -W $temp_file $cmd > /dev/null 2>&1;
                 rm $temp_file;
-        } || { exit 2; };
+        } || { $AS_ADMIN -u $ADMIN_USER  $cmd > /dev/null 2>&1; };
 }
 
 function _deploy(){
