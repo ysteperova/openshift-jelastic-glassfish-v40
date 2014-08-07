@@ -30,7 +30,7 @@ function _deploy(){
 }
 
 function _undeploy(){
-     [ "x${context}" == "xROOT" ] && context="/";
+     #[ "x${context}" == "xROOT" ] && context="/";
      _runAsadminCmd  undeploy   "$context"  >> $ACTIONS_LOG 2>&1;
 }
 
