@@ -14,7 +14,7 @@ function _runAsadminCmd(){
                 local temp_file=`mktemp /tmp/pass.XXXXXXX`;
                 echo -n "AS_ADMIN_PASSWORD=" > $temp_file;
                 cat $PASS_FILE >> $temp_file;
-                $AS_ADMIN -u $ADMIN_USER -W $temp_file $cmd > /dev/null 2>&1;
+                $AS_ADMIN -u $ADMIN_USER -W $temp_file $cmd >> $ACTIONS_LOG 2>&1;
                 rm $temp_file;
         } || { $AS_ADMIN $cmd > /dev/null 2>&1; };
 }
