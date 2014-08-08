@@ -18,5 +18,5 @@ deploy)
     echo
     ;;
 *)
-    echo "usage: $0 (start|stop|restart|help)"
+    echo "usage: $0 (start|stop|restart)"
 esac
