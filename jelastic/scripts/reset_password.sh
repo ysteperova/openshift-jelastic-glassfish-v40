@@ -27,8 +27,10 @@ function _setPassword() {
         service cartridge restart;
         echo -e "AS_ADMIN_PASSWORD=\nAS_ADMIN_NEWPASSWORD=$J_OPENSHIFT_APP_ADM_PASSWORD" >> "/tmp/$$";
         $AS_ADMIN -u admin -W "/tmp/$$" change-admin-password > /dev/null 2>&1;
-        #$AS_ADMIN -u admin -W "/tmp/$$"        create-file-user jelastic 
         $AS_ADMIN -u jelastic -W "/tmp/$$" change-admin-password > /dev/null 2>&1;
-        #$AS_ADMIN -u admin -W "/tmp/$$" enable-secure-admin > /dev/null 2>&1;
+        echo -n "AS_ADMIN_PASSWORD=" > "/tmp/$$";
+        cat $PASS_FILE >> "/tmp/$$";
+        $AS_ADMIN -u admin -W "/tmp/$$" enable-secure-admin > /dev/null 2>&1;
+        service cartridge restart;        
         rm "/tmp/$$" 2>&1;
 }
